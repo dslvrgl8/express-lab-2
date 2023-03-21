@@ -15,32 +15,13 @@ app.get('/tip/:total/:tipPercentage', (req, res) => {
 })
 
 app.get('/magic/:question', (req, res) => {
-    const magic= [{answer: "It is certain"}, 
-    {answer: "It is decidedly so"}, 
-    {answer:"Without a doubt"}, 
-    {answer: "Yes definitely"},
-    {answer: "You may rely on it"}, 
-    {answer: "As I see it yes"}, 
-    {answer: "Most likely"}, 
-    {answer: "Outlook good"},
-    {answer: "Yes"}, 
-    {answer: "Signs point to yes"}, 
-    {answer: "Reply hazy try again"}, 
-    {answer: "Ask again later"},
-    {answer: "Better not tell you now"}, 
-    {answer: "Cannot predict now"}, 
-    {answer: "Concentrate and ask again"},
-    {answer: "Don't count on it"}, 
-    {answer: "My reply is no"}, 
-    {answer: "My sources say no"},
-    {answer: "Outlook not so good"}, 
-    {answer: "Very doubtful"}]
+    const magic= ["It is certain", "It is decidedly so", "Without a doubt", "Yes definitely","You may rely on it", "As I see it yes", "Most likely", "Outlook good","Yes", "Signs point to yes", "Reply hazy try again", "Ask again later","Better not tell you now", "Cannot predict now", "Concentrate and ask again","Don't count on it", "My reply is no", "My sources say no","Outlook not so good", "Very doubtful"]
 
     let magic8 = Math.floor(Math.random() * magic.length)
     res.send((req.params.question) + `
     <html>
         <body>
-            <h1>Magic 8 ball says: ${magic8}</h1>
+            <h1>Magic 8 ball says: ${magic[magic8]}</h1>
         </body>
     </html>`
     );
